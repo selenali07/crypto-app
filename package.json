@@ -1,7 +1,7 @@
 {
-  "homepage": "https://selenali07.github.io/crypto-app",
-  "name": "mm",
+  "name": "crypto-app",
   "version": "0.1.0",
+  "homepage": "https://selenali07.github.io/crypto-app",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -22,13 +22,13 @@
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
-  "scripts": {
+  "scripts": {    
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
