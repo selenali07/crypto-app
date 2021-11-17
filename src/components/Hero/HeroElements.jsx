@@ -2,7 +2,7 @@ import styled, {keyframes} from 'styled-components';
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md'
 
 export const HeroContainer = styled.section`
-  background: url('./../../images/moon.jpeg') top left;
+  background: url('./images/moon.jpeg') top left;
   background-repeat:no-repeat;
   background-size: cover;
   background-color: #0c0c0c;
