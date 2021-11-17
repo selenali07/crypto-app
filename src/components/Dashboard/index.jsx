@@ -27,6 +27,17 @@ const Dashboard = () => {
   const [page, setPage] = useState(1);
   const classes = useStyles();
 
+  const modal = () => {
+      axios
+        .get(
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&page=1&sparkline=false"
+        )
+        .then((res) => {
+          setCoins(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+  }
   const handleSearch = () => {
     return coins.filter(
       (coin) =>
@@ -64,10 +75,10 @@ const Dashboard = () => {
           />
         </SearchForm>
       </DashboardSearch>
-
       {filteredCoins.slice((page - 1) * 10, (page - 1) * 10 + 10).map((coin) => {
         return (
           <Coin
+            onClick={modal}
             key={coin.id}
             name={coin.name}
             price={coin.current_price}

@@ -5,12 +5,13 @@ export const DashboardContainer = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 3rem;
-    background-color: #212121;
+    /*background-color: #101522;*/
+    background-color: black;
     color: #fff;
 `;
 
 export const DashboardSearch = styled.section`
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +20,10 @@ export const DashboardSearch = styled.section`
 export const DashboardSearchTitle = styled.h1`
     margin-bottom: 2rem;
     text-align: center;
+    font-size: 2rem;
+    color: #0AFF99;
+    text-align: left;
+    color: white;
 `;
 
 export const SearchForm = styled.form`
@@ -28,10 +33,13 @@ export const SearchForm = styled.form`
 
 export const SearchInput = styled.input`
     padding-left: 1rem;
-    width: 300px;
+    max-width: 56.25rem;
     height: 3rem;
     border-radius: 0.25rem;
     border: none;
+    width: 95vw;
+    background-color: #212121;
+    color: white;
 `
 
 export const CoinContainer = styled.section`

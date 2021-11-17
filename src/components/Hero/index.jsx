@@ -1,45 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   HeroContainer,
   HeroBg,
   HeroContent,
-  HeroH1,
   HeroP,
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
+  H1,
 } from "./HeroElements";
 import { Button } from "../ButtonElements";
 
-
-
 const Hero = () => {
   const [hover, setHover] = useState(false);
-  const [time, setTime] = useState(Date.now());
-
-  useEffect(() => {
-    const interval = setInterval(() => setTime(Date.now()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const onHover = () => {
-    setHover(!hover);
-  };
+  const onHover = () => setHover(!hover);
 
   return (
     <HeroContainer id="home">
       <HeroBg></HeroBg>
       <HeroContent>
-        <HeroH1>Crypto is</HeroH1>
-        <HeroP>
-          Sign up for a new accoun today and recive $250 in credit towards your
-          next payment
-        </HeroP>
+        <H1>To the moon</H1>
+        <HeroP>Stay up to date on the latest crypto news!</HeroP>
         <HeroBtnWrapper>
           <Button
-            to="signup"
+            to="dashboard"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
@@ -50,7 +34,7 @@ const Hero = () => {
             exact="true"
             offset={-80}
           >
-            Learn More {hover ? <ArrowForward /> : <ArrowRight />}
+            Explore More {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
       </HeroContent>

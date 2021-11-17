@@ -11,8 +11,8 @@ const MobileNav = ({isOpen,toggle}) => {
         <MobileNavMenu>
           <MobileNavLink to='dashboard' onClick={toggle}>Dashboard</MobileNavLink>
           <MobileNavLink to='about' onClick={toggle}>About</MobileNavLink>
-          <MobileNavLink to='Trending' onClick={toggle}>Trending</MobileNavLink>
-          <MobileNavLink to='signup' onClick={toggle}>Sign up</MobileNavLink>
+          <MobileNavLink to='trending' onClick={toggle}>Trending</MobileNavLink>
+          <MobileNavLink to='events' onClick={toggle}>Events</MobileNavLink>
         </MobileNavMenu>
         <SideBtnWrap>
           <MobileNavRoute to='/signin'>Sign in</MobileNavRoute>

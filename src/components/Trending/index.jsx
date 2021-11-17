@@ -23,7 +23,7 @@ const Trending = () => {
   }
   console.log(trendingItems)
   return (
-    <TrendingContainer id='Trending'>
+    <TrendingContainer id='trending'>
       <TrendingH1>Trending Coins</TrendingH1>
       <TrendingH2>Top-6 most searched coins by users in the last 24 hours</TrendingH2>
       <TrendingWrapper>

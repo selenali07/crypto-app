@@ -6,7 +6,10 @@ export const TrendingContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #010606;
+  background: #101522;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+
  `
 export const TrendingWrapper = styled.div`
     max-width: 1000px;
@@ -52,7 +55,7 @@ export const TrendingIcon = styled.img`
 `
 export const TrendingH1 = styled.h1`
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color:#0AFF99;
   @media screen and (max-width: 480px) {
     font-size: 2rem;
@@ -60,8 +63,10 @@ export const TrendingH1 = styled.h1`
 `
 export const TrendingH2 = styled.h2`
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: white;
+  padding: 1rem;
+  text-align: center;
 `
 export const TrendingH3 = styled.h3`
   font-size: 1.2rem;

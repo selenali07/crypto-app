@@ -1,32 +1,32 @@
-import React, {useState} from 'react'
-import Footer from '../components/Footer';
-import Hero from '../components/Hero'
-import Info from '../components/Info'
-import { about, homeObjThree} from '../components/Info/Data';
-import Navbar from '../components/Navbar'
-import Trending from '../components/Trending';
-import Dashboard from '../components/Dashboard';
-import MobileNav from '../components/MobileNav'
+import React, { useState } from "react";
+import MobileNav from "../components/MobileNav";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Trending from "../components/Trending";
+import Events from "../components/Events";
+import Dashboard from "../components/Dashboard";
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () =>{
+  const toggle = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <>
       <MobileNav isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle}/>
+      <Navbar toggle={toggle} />
       <Hero />
       <Dashboard />
-      <Info {...about}/>
+      <About />
       <Trending />
-      <Info {...homeObjThree}/>
+      <Events />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

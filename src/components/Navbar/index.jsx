@@ -35,7 +35,7 @@ const Navbar = ({ toggle }) => {
         <NavbarContainer>
           <NavLogo to='/' onClick={toggleHome}>
             <img src="./images/doge.svg" alt="doge" style = {navImg}/>
-            CryptoHub
+            CryptoDash
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
@@ -52,14 +52,14 @@ const Navbar = ({ toggle }) => {
               >About</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='Trending'
+              <NavLinks to='trending'
               smooth={true} duration={500} spy={true} exact='true' offset={-80}
               >Trending</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='signup'
+              <NavLinks to='events'
               smooth={true} duration={500} spy={true} exact='true' offset={-80}
-              >Sign Up</NavLinks>
+              >Events</NavLinks>
             </NavItem>
           </NavMenu>
         

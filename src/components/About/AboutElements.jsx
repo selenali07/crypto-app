@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 
-export const InfoContainer = styled.div`
+export const EventContainer = styled.div`
   color: #fff;
-  background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
+  background: #000;
 
   @media screen and  (max-width: 48rem) {
     padding: 100px 0;
   }
 `
-export const InfoWrapper = styled.div`
+export const EventWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
   width: 100%auto;
   max-width: 1100px;
   margin-right: auto;
@@ -19,14 +18,14 @@ export const InfoWrapper = styled.div`
   padding: 0 24px;
   justify-content: center;
 `
-export const InfoRow = styled.div`
+export const EventRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
-  grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
+  grid-template-areas: 'col1 col2';
 
   @media screen and (max-width: 48rem) {
-    grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)}
+    grid-template-areas: 'col1 col1' 'col2 col2'
   }
 `
 export const Column1 = styled.div`
@@ -45,7 +44,7 @@ export const TextWrapper = styled.div`
   padding-bottom: 60px;
 `
 export const TopLine = styled.p`
-  color: #0AFF99;
+  color: #0AEFFF;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -55,33 +54,30 @@ export const TopLine = styled.p`
 `
 
 export const Heading = styled.h1`
-  margin-bottom: 24px;
-  font-size: 48px;
-  line-height: 1.1;
-  font-weight: 600px;
-  color: ${({lightText}) => (lightText ? '#f7f8fa' : '#010606')};
-
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
-  }
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color:#0AFF99;
+    text-align: center;
+    @media screen and (max-width: 480px) {
+    font-size: 2rem;
+    }  
 `
+
 export const Subtitle  = styled.p`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({darkText}) => (darkText ? '#010606' : '#fff')};
+  color: white;
 `
-export const BtnWrap = styled.div`
-  display:flex;
-  justify-content: flex-start;
-`;
+
+
 export const ImgWrap = styled.div`
-  max-width: 555px;
+  width: 100%;
   height: 100%;
 `;
 export const Img = styled.img`
-  width: 100%;
+  width: 10rem;
   margin: 0 0 10px 0;
-  padding-right: 0;
+  padding: 0;
 `;
