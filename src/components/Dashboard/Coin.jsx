@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 import {
   CoinContainer,
   CoinRow,
@@ -29,10 +31,12 @@ const Coin = ({
   marketcap,
   image,
   priceChange,
+  id
 }) => {
+  const history = useHistory();
   return (
     
-    <CoinContainer onclick="">
+    <CoinContainer onClick={() => history.push(`/coin/${id}`)}>
       <CoinRow>
         <CoinImg src={image} alt="crypto"></CoinImg>
         <CoinNameContainer>

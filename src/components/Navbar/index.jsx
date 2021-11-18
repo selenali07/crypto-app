@@ -4,7 +4,7 @@ import {IconContext} from 'react-icons/lib'
 import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinks, NavItem } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 
-const navImg={
+const navImg = {
   width:'3rem',
   height:'auto',
   margin: '1rem',
