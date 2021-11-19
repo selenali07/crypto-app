@@ -25,8 +25,12 @@ const Slider = () => {
 	<SlideTrack>
         {coins.map((coin) => {
         return (
-          <Slide>{coin.name}
-          {coin.current_price}</Slide>
+          <Slide>
+            <b>{coin.name}</b> ({coin.symbol.toUpperCase()})
+          <br></br>
+          {coin.price_change_percentage_24h.toFixed(3)}%
+          <br></br>
+          ${coin.current_price}</Slide>
         );
       })}
 	</SlideTrack>

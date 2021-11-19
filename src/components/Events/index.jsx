@@ -27,7 +27,7 @@ const Events = () => {
     <EventContainer id="events">
       <EventWrapper>
         <Heading>Upcoming Events</Heading>
-        {events.map((eventIdx, idx) => {
+        {/*events.map((eventIdx, idx) => {
           console.log(idx);
             return (
               <EventRow>
@@ -37,7 +37,7 @@ const Events = () => {
                   </TextWrapper>
               </EventRow>
             );
-        })}
+        })*/}
       </EventWrapper>
     </EventContainer>
   );

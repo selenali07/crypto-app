@@ -21,16 +21,16 @@ const Footer = () => {
               <SocialIconLink href='/' target='_blank' arial-label='Facebook'>
                 <FaFacebook />
               </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' arial-label='Website'>
+              <SocialIconLink href='https://selena.li/' target='_blank' arial-label='Website'>
                 <FaCode />
               </SocialIconLink>
               <SocialIconLink href='/' target='_blank' arial-label='Twitter'>
                 <FaTwitter/>
               </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' arial-label='Github'>
+              <SocialIconLink href='https://github.com/selenali07/crypto-app' target='_blank' arial-label='Github'>
                 <FaGithub/>
               </SocialIconLink>
-              <SocialIconLink href='//www.linkedin.com/in/selenali07/' target='_blank' arial-label='Linkedin'>
+              <SocialIconLink href='https://www.linkedin.com/in/selenali07/' target='_blank' arial-label='Linkedin'>
                 <FaLinkedin />
               </SocialIconLink>
             </SocialIcons>

@@ -8,15 +8,18 @@ export const scroll = keyframes `
 export const SliderElt = styled.div`
     background: white;
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
+	height: auto;
 	margin: auto;
+	padding: 0.1rem 0;
 	overflow:hidden;
 	position: relative;
 	width: 100vw;
-
+	display: flex;
+	justify-self:center;
+	align-items:center;
     &::before,
 	&::after {
-		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
 		content: "";
 		height: 100px;
 		position: absolute;
@@ -40,6 +43,6 @@ export const SlideTrack = styled.div`
     width: calc(250px * 10);
 `
 export const Slide = styled.div` 
-    height: 100px;
+    height: auto;
     width: 250px;
 `
