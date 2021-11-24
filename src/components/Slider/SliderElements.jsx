@@ -2,28 +2,27 @@ import styled, {keyframes} from 'styled-components';
 
 export const scroll = keyframes `
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-15vw * 5))}
+	100% { transform: translateX(-100rem)}
 `
-
 export const SliderElt = styled.div`
-    background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    background: #fff;
 	height: auto;
 	margin: auto;
-	padding: 0.1rem 0;
+	padding: 0.5rem 0;
+	max-width: 100rem;
 	overflow:hidden;
 	position: relative;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	justify-self:center;
 	align-items:center;
+	color: #000;
     &::before,
 	&::after {
-		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
 		content: "";
-		height: 100px;
+		height: 6rem;
 		position: absolute;
-		width: 200px;
+		width: 20rem;
 		z-index: 2;
 	}
     &::after {
@@ -31,18 +30,31 @@ export const SliderElt = styled.div`
 		top: 0;
 		transform: rotateZ(180deg);
 	}
-
 	&::before {
 		left: 0;
 		top: 0;
 	}
 `
 export const SlideTrack = styled.div` 
-    animation: ${scroll} 20s linear infinite;
+    animation: ${scroll} 30s linear infinite;
     display: flex;
-    width: calc(250px * 10);
+	align-items: center;
 `
 export const Slide = styled.div` 
     height: auto;
-    width: 250px;
+	margin: 0.5rem 1rem;
+	display:flex;
+	flex-direction:row;
+	align-items: center;
+	width: 20rem;
+`
+export const Loss = styled.p `
+	color: #FF0000;
+	margin-left:0.5rem;
+	margin-right:0.5rem;
+`
+export const Profit = styled.p `
+	color: #0C7C59;
+	margin-left:0.5rem;
+	margin-right:0.5rem;
 `

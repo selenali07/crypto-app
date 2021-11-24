@@ -12,7 +12,7 @@ export const TrendingContainer = styled.div`
 
  `
 export const TrendingWrapper = styled.div`
-    max-width: 1000px;
+    max-width: 62.5rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -26,7 +26,7 @@ export const TrendingWrapper = styled.div`
 
     @media screen and (max-width: 786px) {
       grid-template-columns: 1fr;
-      padding: 0 1.2rem;
+      padding: 0 1rem;
   }
 `
 export const TrendingCard = styled.div`
@@ -36,8 +36,8 @@ export const TrendingCard = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 0.8rem;
-  max-height: 22rem;
-  padding:  30px;
+  max-height: 20rem;
+  padding: 1.9rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
 

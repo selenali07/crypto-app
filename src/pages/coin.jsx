@@ -4,8 +4,12 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import parser from "html-react-parser";
 import { MdArrowBack } from "react-icons/md";
+import SelectButton from "../components/SelectButton";
+
 
 import {
+  AboutCoinTitle,
+  ButtonRow,
   ChartContainer,
   CoinWrapper,
   CoinName,
@@ -24,11 +28,8 @@ import { CircularProgress } from "@material-ui/core";
 const Coin = () => {
   const { id } = useParams();
   const [coin, setCoin] = useState([]);
-  const [days, setDays] = useState(365);
+  const [days, setDays] = useState(1);
   const [historicData, setHistoricData] = useState();
-
-  const [hover, setHover] = useState(false);
-  const onHover = () => setHover(!hover);
 
   const fetchCoin = async () => {
     const { data } = await axios.get(
@@ -41,30 +42,45 @@ const Coin = () => {
       data.name,
       data.image.small,
       data.symbol.toUpperCase(),
-      data.market_cap_rank
+      data.market_cap_rank,
+      data.market_data.current_price.usd,
+      data.market_cap
     ]);
   };
   useEffect(() => {
     fetchCoin();
-    fetchHistoricData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const chartDays = [
+    {
+      label: "1D",
+      value: 1,
+    },
+    {
+      label: "1W",
+      value: 7,
+    },
+    {
+      label: "1M",
+      value: 30,
+    },
+    {
+      label: "1Y",
+      value: 365,
+    },
+  ];
+
   const fetchHistoricData = async () => {
     const { data } = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365`
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
     );
     setHistoricData(data.prices);
-    console.log(data.prices);
   };
-  console.log(coin);
-
-  const navImg = {
-    width: "3rem",
-    height: "auto",
-    margin: "1rem",
-  };
-
+  useEffect(() => {
+    fetchHistoricData();
+  }, [days]);
+  
   return (
     <>
       <NavCoinPage>
@@ -76,19 +92,31 @@ const Coin = () => {
           </NavLogo>
         </NavCoinPageContainer>
       </NavCoinPage>
+      <main style={{backgroundColor: "black"}}>
       <CoinWrapper>
         <CoinInfoContainer>
           <CoinHeader>
           <img src={coin[3]} alt="" />
             <CoinName>{coin[2]} ({coin[4]})</CoinName>
-            <CoinName></CoinName>
-            #{coin[5]}
+            <P>#{coin[5]}</P>
           </CoinHeader>
         </CoinInfoContainer>
         <ChartContainer>
+        <P>Current price: ${coin[6]}</P>
+          <ButtonRow>
+        {chartDays.map((day) => (
+                <SelectButton
+                  key={day.value}
+                  onClick={() => setDays(day.value)}
+                  selected={day.value === days}
+                >
+                  {day.label}
+                </SelectButton>
+              ))}
+              </ButtonRow>
           {!historicData ? (
             <CircularProgress
-              style={{ color: "rebeccapurple" }}
+              style={{ color: "#0aefff" }}
               size={200}
               thickness={1}
             />
@@ -105,7 +133,7 @@ const Coin = () => {
                     {
                       data: historicData.map((coin) => coin[1]),
                       label: `Price ( Past ${days} Days ) in USD`,
-                      borderColor: "rebeccapurple",
+                      borderColor: "#0aefff",
                       color: "white",
                     },
                   ],
@@ -131,11 +159,18 @@ const Coin = () => {
         </ChartContainer>
       </CoinWrapper>
       <P>
-        <CoinDesc>{parser(`${coin[0]}`)}</CoinDesc>
+        <CoinDesc> <br></br> {parser(`${coin[0]}`)}</CoinDesc>
       </P>
+      </main>
       <Footer />
       </>
   );
+};  
+
+const navImg = {
+  width: "3rem",
+  height: "auto",
+  margin: "1rem",
 };
 
 export default Coin;

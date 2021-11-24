@@ -46,9 +46,8 @@ export const CoinContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-
     :hover{
-        background:rebeccapurple;
+        background:#212121;
         border-radius: 0.5rem;
         cursor: pointer;
     }
@@ -60,9 +59,9 @@ export const CoinRow = styled.article`
     justify-content: start;
     align-items: center;
     height: 5rem;
-    border-bottom: 1px solid #d7d7d7;
+    border-bottom: 0.0625rem solid #d7d7d7;
     width: 95vw;
-    margin: 0 1rem;
+    padding: 0 1rem;
     max-width: 56.25rem;
 `
 export const CoinNameContainer = styled.div`
@@ -100,7 +99,7 @@ export const CoinData = styled.div`
 export const CoinMarketCapShort = styled.div`
     flex: 1;
     display:none;
-    @media (max-width: 767px){
+    @media (max-width: 47.9375rem){
         display: block;
         text-align: right;
     }

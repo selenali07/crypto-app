@@ -1,11 +1,11 @@
 import styled, {keyframes} from 'styled-components';
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md'
 
+export const bounce = keyframes`
+  0%, 100% {transform: translateY(0);}
+	50% {transform: translateY(0.5rem);}
+`
 export const HeroContainer = styled.section`
-  background: url('./images/moon.jpeg') top left;
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-color: #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,10 @@ export const HeroContainer = styled.section`
   height: 100vh;
   position: relative;
   z-index: 1;
-
+  background: url("./images/background.jpeg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  animation: ${bounce} 20s infiinite;
 `
 export const HeroBg = styled.div`
   position: absolute;
@@ -21,6 +24,7 @@ export const HeroBg = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+
 `
 
 export const HeroContent = styled.div`
@@ -74,7 +78,7 @@ export const H1 = styled.h1`
   color: #fff;
   font-size: 3rem;
   text-align: center;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 62rem) {
     font-size: 1.8rem;
     border-right: .05em solid #FFD300; 
 

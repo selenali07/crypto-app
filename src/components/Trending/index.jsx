@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import {TrendingContainer, TrendingH1, TrendingH2, TrendingWrapper, TrendingCard, TrendingIcon, TrendingH3, TrendingP} from './TrendingElements'
 
@@ -17,6 +18,7 @@ const Trending = () => {
     fetchTrendingCoins();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const history = useHistory();
 
   for(var i = 0; i < trending.length - 1; i++){
     trendingItems.push(trending[i].item);
@@ -28,8 +30,9 @@ const Trending = () => {
       <TrendingH2>Top-6 most searched coins by users in the last 24 hours</TrendingH2>
       <TrendingWrapper>
       {trendingItems.map(coinIdx => {
+        let coinid = coinIdx.id;
         return(
-          <TrendingCard>
+          <TrendingCard onClick={() => history.push(`/coin/${coinid}`)}>
             <TrendingIcon src={coinIdx.large}/>
             <TrendingH3>{coinIdx.id}</TrendingH3>
             <TrendingP>{coinIdx.symbol}</TrendingP>

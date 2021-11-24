@@ -81,8 +81,8 @@ const Dashboard = () => {
             name={coin.name}
             price={coin.current_price}
             symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
+            marketcap={coin.market_cap}
+            volume={coin.total_volume}
             image={coin.image}
             priceChange={coin.price_change_percentage_24h}
           />
@@ -103,7 +103,6 @@ const Dashboard = () => {
             setPage(value);
           }}
         />
-
     </DashboardContainer>
   );
 }

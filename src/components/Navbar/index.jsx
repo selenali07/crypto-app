@@ -41,12 +41,7 @@ const Navbar = ({ toggle }) => {
             <FaBars />
           </MobileIcon>
           <NavMenu>
-            <NavItem>
-              <NavLinks to='dashboard' 
-              smooth={true} duration={500} spy={true} exact='true' offset={-80}
-              >Dashboard</NavLinks>
-            </NavItem>
-            <NavItem>
+          <NavItem>
               <NavLinks to='about'
               smooth={true} duration={500} spy={true} exact='true' offset={-80}
               >About</NavLinks>
@@ -57,10 +52,11 @@ const Navbar = ({ toggle }) => {
               >Trending</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='events'
+              <NavLinks to='dashboard' 
               smooth={true} duration={500} spy={true} exact='true' offset={-80}
-              >Events</NavLinks>
+              >Dashboard</NavLinks>
             </NavItem>
+
           </NavMenu>
         
         </NavbarContainer>

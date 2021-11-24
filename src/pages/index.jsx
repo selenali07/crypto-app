@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Trending from "../components/Trending";
-import Events from "../components/Events";
+import Stats from "../components/Stats";
 import Dashboard from "../components/Dashboard";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
@@ -23,10 +23,11 @@ const Home = () => {
       <main>
         <Hero />
         <Slider />
-        <Dashboard />
         <About />
         <Trending />
-        <Events />
+        <Dashboard />
+        {/*<Stats />*/}
+        
       </main>
       <Footer />
 
